@@ -1,0 +1,6 @@
+/node_modules
+items.json
+docker/postgres/*
+docker/redis/*
+/dist
+.env
