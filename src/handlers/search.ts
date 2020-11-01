@@ -7,7 +7,7 @@ import { BestBuyKey, WalmartKey } from '../config';
 
 export const providers: any = {
   walmart: {
-    url: `http://api.walmartlabs.com/v1/items?apiKey=${BestBuyKey}&upc=`,
+    url: `http://api.walmartlabs.com/v1/items?apiKey=${WalmartKey}&upc=`,
     process: (response: WalmartResponse) => {
       if (response.errors) return;
 
@@ -16,7 +16,7 @@ export const providers: any = {
   },
   bestbuy: {
     buildUrl: (barcode: string) => {
-      return `https://api.bestbuy.com/v1/products(upc=${barcode})?format=json&show=all&apiKey=${WalmartKey}`;
+      return `https://api.bestbuy.com/v1/products(upc=${barcode})?format=json&show=all&apiKey=${BestBuyKey}`;
     },
     process: (response: BestBuyResponse) => {
       if (response.error) {
